@@ -1,0 +1,34 @@
+{%load static%}
+
+<nav class="navbar">
+    <div class="logo-wrapper">
+        <a href="{% url 'homepage' %}">
+            <img src="{%static 'imgs/logo-nobg.png' %}" alt="logo" class="logo">
+        </a>
+    </div>
+    <form action="{%url 'search_country'%}" method='post' class="search-form">
+        {%csrf_token%}
+        <input type="search" name="search-bar" class="search-bar" placeholder="Search for a country">
+        <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+    <div class="navbar-links">
+        {%if user.is_authenticated %}
+            <div class="profile">
+                <div class="profile-picture">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+                <div class="profile-window">
+                    {%if user.profile %}
+                    <a href="{%url 'profile' user.profile.id%}" class="navbar-link profile-link">Profile</a>
+                    {%else%}
+                    <a href="{%url 'profile_redirect'%}" class="navbar-link profile-link">Create Profile</a>
+                    {%endif%}
+                    <hr class="division">
+                    <a href="{%url 'logout'%}" class="navbar-link profile-link">Logout</a>
+                </div>
+            </div>
+        {%else%}
+            <a href="{% url 'login' %}" class="navbar-link">Login/Sign Up</a>
+        {%endif%}
+    </div>
+</nav>

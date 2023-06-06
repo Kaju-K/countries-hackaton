@@ -1,0 +1,77 @@
+.navbar {
+    position: fixed;
+    height: 3rem;
+    background-color: cadetblue;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+    box-sizing: border-box;
+    z-index: 9999;
+}
+
+.logo {
+    height: 3.2rem;
+    aspect-ratio: 1 / 1;
+}
+
+.search-form {
+    width: 50%;
+}
+
+.search-bar {
+    width: 80%;
+    height: 2rem;
+    border-radius: 5px;
+}
+
+.search-button {
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: yellow;
+}
+
+.profile {
+    position: relative;
+}
+
+.profile-window {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    padding: 1rem;
+    background-color: cadetblue;
+}
+
+.profile-picture {
+    border: 1px solid yellow;
+    border-radius: 50%;
+    height: 1.5rem;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: yellow;
+}
+
+.division {
+    width: 100%;
+}
+
+.profile-link {
+    padding: 0.5rem 0   ;
+}

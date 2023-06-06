@@ -1,0 +1,36 @@
+.main {
+    height: 100%;
+    display: flex;
+    gap: 3rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 2rem 2rem 2rem ;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(0, transparent 0%, aquamarine 30%);
+}
+
+.main-text {
+    text-align: center;
+}
+
+.main-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.main-description {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.signup {
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.main-link {
+    text-decoration: underline;
+    color: coral;
+}

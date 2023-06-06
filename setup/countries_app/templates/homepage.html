@@ -1,0 +1,26 @@
+{%extends 'partials/base.html'%}
+{%load static%}
+
+
+    {%block title%}
+    HomePage
+    {%endblock title%}
+
+    {%block style%}
+    <link rel="stylesheet" href="{%static 'homepage/styles/style.css'%}">
+    {%endblock style%}
+
+    {%block content%}
+    <main class="main">
+        <img src="{%static 'imgs/airplane_image_nobg.png'%}" alt="">
+        <div class="main-text">
+            <h1 class="main-title">Keep track of you travels</h1>
+            {%if user.is_authenticated%}
+            <h2 class="main-description">Find about people's experiences</h2>
+            {%else%}
+            <h2 class="main-description">Be part of this community </h2>
+            <a href="{%url 'signup'%}" class="signup">Sign up</a>
+            {%endif%}
+        </div>
+    </main>
+    {%endblock content%}

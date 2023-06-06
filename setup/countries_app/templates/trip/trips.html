@@ -1,0 +1,28 @@
+{%extends 'partials/base.html'%}
+{%load static%}
+
+    {%block title%}
+    Trips
+    {%endblock title%}
+
+    {%block style%}
+    <link rel="stylesheet" href="{%static 'trip/styles/style.css'%}">
+    {%endblock style%}
+
+    {%block content%}
+    {%if comment_form != "no" %}
+    <form action="{%url 'add_comment' country_id%}" method="post" class="comment-form">
+        {%csrf_token%}
+        {{comment_form}}
+        <button type="submit">Comment</button>
+    </form>
+    {%endif%}
+    {%for comment in comments.0%}
+        <div class="comment-wrapper">
+            <p class="comment-user">{{comment.user}}</p>
+            <p class="comment">{{comment.comment}}</p>
+            <p class="comment-date">{{comment.date}}</p>
+        </div>
+    {%endfor%}
+    {{users}}
+    {%endblock content%}

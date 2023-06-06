@@ -1,0 +1,31 @@
+{% extends 'partials/base.html' %}
+{%load static%}
+
+    {%block title%}
+    Profile
+    {%endblock title%}
+
+    {%block style%}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+    <link rel="stylesheet" href="{% static 'accounts/styles/style.css' %}">
+    {%endblock style%}
+
+    {%block content%}
+    <div class="map-wrapper">
+        {%if user.username == profile.user.username%}
+        <div id="map" class="user-map"></div>
+        <form action="{%url 'add_trip'%}" method="post" class="trip-form">
+            <p>Add a Trip to your map</p>
+            {%csrf_token%}
+            {{form}}
+            <button type="submit">Add Trip</button>
+        </form>
+        {%else%}
+        <div id="map" class="not-user-map"></div>
+        {%endif%}
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="{% static 'accounts/app/main.js'%}"></script>
+    {%endblock content%}
