@@ -1,13 +1,20 @@
 {%extends 'partials/base.html'%}
+{%load static%}
 
     {%block title%}
     Sign Up
     {%endblock title%}
+    
+    {%block style%}
+    <link rel="stylesheet" href="{%static 'accounts/styles/signup.css'%}">
+    {%endblock style%}
 
     {%block content%}
-    <form method="post">
-        {% csrf_token %}
-        {{form}}
-        <button type="submit">Sing Up</button>
-    </form>
+    <div class="form-wrapper">
+        <form method="post" class="signup-form">
+            {% csrf_token %}
+            {{form}}
+            <button type="submit">Sing Up</button>
+        </form>
+    </div>
     {%endblock content%}
