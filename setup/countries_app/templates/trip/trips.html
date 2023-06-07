@@ -17,12 +17,14 @@
         <button type="submit">Comment</button>
     </form>
     {%endif%}
-    {%for comment in comments.0%}
+    {%for comment in comments%}
+        {%for i in comment%}
         <div class="comment-wrapper">
-            <p class="comment-user">{{comment.user}}</p>
-            <p class="comment">{{comment.comment}}</p>
-            <p class="comment-date">{{comment.date}}</p>
+            <p class="comment-user">{{i.user}}</p>
+            <p class="comment">{{i.comment}}</p>
+            <p class="comment-date">{{i.date}}</p>
         </div>
+        {%endfor%}
     {%endfor%}
     {{users}}
     {%endblock content%}
